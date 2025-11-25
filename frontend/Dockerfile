@@ -26,7 +26,7 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Build çıktısını nginx'in servis ettiği dizine kopyala
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 # 80 portunu dışarı aç
 EXPOSE 80

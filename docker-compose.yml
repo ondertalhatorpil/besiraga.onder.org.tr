@@ -49,7 +49,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
-      - "7823:3306"
+      - "7833:3306"
     networks:
       - bilgeyaris-network
     command: --default-authentication-plugin=mysql_native_password

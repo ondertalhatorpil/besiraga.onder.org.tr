@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { rezervasyonAPI } from '../../services/api';
-import mekanlarData from '../../data/mekanlarData';
 
-// --- Mekan Galeri Modalı Bileşeni ---
 const MekanGaleriModal = ({ isOpen, onClose, mekanlar }) => {
   if (!isOpen) return null;
 
@@ -94,8 +92,9 @@ const Step4MekanSecimi = ({ formData, updateFormData, nextStep, prevStep }) => {
   const loadMekanlar = async () => {
     setLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 500)); 
-      setMekanlar(mekanlarData); 
+      // API'den mekanları çek
+      const response = await rezervasyonAPI.getMekanlar();
+      setMekanlar(response.data);
     } catch (error) {
       console.error('Mekanlar yükleme hatası:', error);
       setMekanlar([]); 

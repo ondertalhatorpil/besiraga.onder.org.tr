@@ -108,9 +108,13 @@ const AdminLayout = () => {
                             </svg>
                         </button>
 
-                       
+                        {/* Breadcrumb / Page Title - Desktop */}
+                        <div className="hidden lg:block">
+                            <h2 className="text-xl font-semibold text-gray-800">
+                                Yönetim Paneli
+                            </h2>
+                        </div>
 
-                        {/* Ana Sayfaya Git */}
                         <a
                             href="/"
                             target="_blank"
